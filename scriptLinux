@@ -22,5 +22,14 @@ mkdir /media/cdrom
 mount /dev/cdrom/ /media/cdrom/
 mkdir ~/repos
 mv /etc/yum.repos.d/* ~/repos
-mv ~/repos/CentOS-Media.repo /etc/yum.repos.d
+mv ~/repos/CentOS-Media.repo /etc/yum.repos.ds
 yum install tcpdump net-tools curl vim lynx dhclient bind-utils nfs-utils cifs-utils sshpass -y
+
+###
+### debian auto install rep and set hosts file
+###
+
+rm -rf /media/cdrom0
+mount /dev/sr0 /media/cdrom
+apt-cdrom add
+apt-get install tcpdump net-tools curl vim lynx dnsutils bind9 nfs-common sshpass network-manager cifs-utils -y
