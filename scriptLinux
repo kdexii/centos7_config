@@ -1,0 +1,26 @@
+127.0.0.1	localhost
+
+172.16.20.10	L-SRV.skill39.wsr server.skill39.wsr
+10.10.10.1	L-FW.skill39.wsr
+172.16.50.2	L-RTR-A.skill39.wsr
+172.16.55.2	L-RTR-B.skill39.wsr
+172.16.200.61	L-CLI-B.skill39.wsr
+20.20.20.100	R-FW.skill39.wsr www.skill39.wsr
+192.168.20.10	R-SRV.skill39.wsr
+192.168.10.2	R-RTR.skill39.wsr
+192.168.100.100	R-CLI.skill39.wsr
+20.20.20.5	OUT-CLI.skill39.wsr
+
+
+
+
+###
+### centos auto install rep and set hosts file
+###
+
+mkdir /media/cdrom
+mount /dev/cdrom/ /media/cdrom/
+mkdir ~/repos
+mv /etc/yum.repos.d/* ~/repos
+mv ~/repos/CentOS-Media.repo /etc/yum.repos.d
+yum install tcpdump net-tools curl vim lynx dhclient bind-utils nfs-utils cifs-utils sshpass -y
